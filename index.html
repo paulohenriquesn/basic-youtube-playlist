@@ -12,8 +12,8 @@
 <center id="centro">
 <input type='text' id="url">URL</input><br>
 <input type='text' id="playlist">Playlist</input><br>
-<button onClick="adicionarVideo()" class="btn btn-primary">Adicionar Video</button>
-<button onClick="criarPlaylist()" class="btn btn-primary">Criar Playlist</button>
+<button onClick="adicionarVideo(document.getElementById('url').value,document.getElementById('playlist').value)" class="btn btn-primary">Adicionar Video</button>
+<button onClick="criarPlaylist(document.getElementById('playlist').value)" class="btn btn-primary">Criar Playlist</button>
 <button onClick="deletarPlaylist()" class="btn btn-primary">Deletar Playlist</button>
 </center>
 </body>
