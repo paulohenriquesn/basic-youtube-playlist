@@ -1,7 +1,7 @@
 adicionarVideo = () => {
 	link = document.getElementById('url').value;
 	playlist = document.getElementById('playlist').value;
-	if(link === ""){alert('Escreva algo');}else{
+	if(link === "" || playlist ===""){alert('Porfavor prencha todos campos!');}else{
 	var Video = document.createElement('iframe');
 	Video.width = "150";
 	Video.height="150";
