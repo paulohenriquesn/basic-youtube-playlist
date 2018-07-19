@@ -12,7 +12,8 @@ adicionarVideo = () => {
 	Video.src = "https://www.youtube.com/embed/" + id;
 	document.getElementById('div' + playlist).appendChild(Video);
 	deletar = document.createElement("button");
-	deletar.innerHTML = "deletar";
+	deletar.innerHTML = "Deletar";
+	deletar.setAttribute('class','btn btn-danger');
 	deletar.onclick = () => {
 		document.getElementById('video' + id).remove();
 	}
@@ -22,7 +23,8 @@ adicionarVideo = () => {
 	Video.src = "https://www.youtube.com/embed/" + id;
 	document.getElementById('div' + playlist).appendChild(Video);
 	deletar = document.createElement("button");
-	deletar.innerHTML = "deletar";
+	deletar.innerHTML = "Deletar";
+	deletar.setAttribute('class','btn btn-danger');
 	deletar.onclick = () => {
 		document.getElementById('video' + id).remove();
 		deletar.remove();
@@ -37,6 +39,7 @@ criarPlaylist = () => {
 	if(nome ==="") {alert('Porfavor prencha o nome da playlist!');}else{
 	var playlist = document.createElement('div');	
 	playlist.id = "div" + nome;
+	playlist.style = "border:20px solid #2eb9ce;";
 	document.getElementById("centro").appendChild(playlist);
 	var name = document.createElement('h1');
 	var nameD = document.createTextNode(nome + " Playlist");
