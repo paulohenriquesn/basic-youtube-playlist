@@ -8,18 +8,33 @@ adicionarVideo = () => {
 
 	if(link.substr(0,5) == "http:") {
 	id = link.substr(31,link.lenght);
+	Video.id = "video" + id;
 	Video.src = "https://www.youtube.com/embed/" + id;
 	document.getElementById('div' + playlist).appendChild(Video);
+	deletar = document.createElement("button");
+	deletar.innerHTML = "deletar";
+	deletar.onclick = () => {
+		document.getElementById('video' + id).remove();
+	}
 	}else if(link.substr(0,5) == "https") {
 	id = link.substr(32,link.lenght);
+	Video.id = "video" + id;
 	Video.src = "https://www.youtube.com/embed/" + id;
 	document.getElementById('div' + playlist).appendChild(Video);
+	deletar = document.createElement("button");
+	deletar.innerHTML = "deletar";
+	deletar.onclick = () => {
+		document.getElementById('video' + id).remove();
+		deletar.remove();
 	}
+	}
+	document.getElementById('div' + playlist).appendChild(deletar);
 }
 }
 
 criarPlaylist = () => {
-	nome = document.getElementById('playlist').value;
+	nome = document.getElementById("playlist").value;
+	if(nome ==="") {alert('Porfavor prencha o nome da playlist!');}else{
 	var playlist = document.createElement('div');	
 	playlist.id = "div" + nome;
 	document.getElementById("centro").appendChild(playlist);
@@ -27,5 +42,12 @@ criarPlaylist = () => {
 	var nameD = document.createTextNode(nome + " Playlist");
 	name.appendChild(nameD);
 	document.getElementById("div" + nome).appendChild(name);
+}
+}
 
+deletarPlaylist = () => {
+	nome = document.getElementById("playlist").value;
+	if(nome ==="") {alert('Porfavor prencha o nome da playlist!');}else{
+		document.getElementById("div" + nome).remove();
+	}
 }
