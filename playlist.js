@@ -11,11 +11,17 @@ adicionarVideo = () => {
 	Video.id = "video" + id;
 	Video.src = "https://www.youtube.com/embed/" + id;
 	document.getElementById('div' + playlist).appendChild(Video);
+
 	deletar = document.createElement("button");
 	deletar.innerHTML = "Deletar";
 	deletar.setAttribute('class','btn btn-danger');
+	document.getElementById('div' + playlist).appendChild(deletar);
 	deletar.onclick = () => {
+		try {
 		document.getElementById('video' + id).remove();
+	}catch{
+	}
+		button.remove();
 	}
 	}else if(link.substr(0,5) == "https") {
 	id = link.substr(32,link.lenght);
@@ -25,12 +31,18 @@ adicionarVideo = () => {
 	deletar = document.createElement("button");
 	deletar.innerHTML = "Deletar";
 	deletar.setAttribute('class','btn btn-danger');
-	deletar.onclick = () => {
-		document.getElementById('video' + id).remove();
-		deletar.remove();
-	}
-	}
 	document.getElementById('div' + playlist).appendChild(deletar);
+
+	deletar.onclick = () => {
+		try {
+		document.getElementById('video' + id).remove();
+	}catch{
+	}
+		button.remove();
+	}
+
+
+}
 }
 }
 
