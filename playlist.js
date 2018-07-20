@@ -1,4 +1,3 @@
-console.log(decodeURI(window.location.search.substr(1)));	
 try { 
 var x = JSON.parse(decodeURI(window.location.search.substr(1)));
 }
@@ -6,43 +5,32 @@ catch {}
 
 adicionarVideo = (link,playlist) => {
 	if(link === "" || playlist ===""){alert('Porfavor prencha todos campos!');}else{
-	var Video = document.createElement('iframe');
-	Video.width = "150";
-	Video.height="150";
-
 	if(link.substr(0,5) == "http:") {
 	id = link.substr(31,link.length);
-	Video.id = "video" + id;
-	Video.src = "https://www.youtube.com/embed/" + id;
-	document.getElementById('div' + playlist).appendChild(Video);
-
+	$("#div" + playlist).append("<li><iframe src='https://www.youtube.com/embed/" + id + "'</iframe></li>");
 	deletar = document.createElement("button");
 	deletar.innerHTML = "Deletar";
 	deletar.setAttribute('class','btn btn-danger');
+	deletar.setAttribute('id','video' + id + 'btn');
 	document.getElementById('div' + playlist).appendChild(deletar);
+
 	deletar.onclick = () => {
-		try {
 		document.getElementById('video' + id).remove();
-	}catch{
+		document.getElementById('video' + id + 'btn').remove();
 	}
-		button.remove();
-	}
+	
 	}else if(link.substr(0,5) == "https") {
 	id = link.substr(32,link.length);
-	Video.id = "video" + id;
-	Video.src = "https://www.youtube.com/embed/" + id;
-	document.getElementById('div' + playlist).appendChild(Video);
+	$("#div" + playlist).append("<li id='video" + id + "'><iframe src='https://www.youtube.com/embed/" + id + "'</iframe></li>");
 	deletar = document.createElement("button");
 	deletar.innerHTML = "Deletar";
 	deletar.setAttribute('class','btn btn-danger');
+	deletar.setAttribute('id','video' + id + 'btn');
 	document.getElementById('div' + playlist).appendChild(deletar);
 
 	deletar.onclick = () => {
-		try {
 		document.getElementById('video' + id).remove();
-	}catch{
-	}
-		button.remove();
+		document.getElementById('video' + id + 'btn').remove();
 	}
 
 
