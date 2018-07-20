@@ -10,11 +10,28 @@
 
 	</header>
 <center id="centro">
+<div id="demostracao">
+	<h2>Demostração</h2>
+<img src="byp.gif" width="750" height="750" style="border:20px solid #2eb9ce;"/>
+<button class="btn btn-danger" onclick="FecharDemo()">Fechar</button>
+</div>
+<script>
+	$("#demostracao").hide();
+	MostrarDemo = () => {
+		$("#demostracao").show();
+	}
+	FecharDemo = () => {
+		$("#demostracao").hide();
+	}
+	</script>
+	<h1>Youtube Playlist Basic</h1><hr>
 <input type='text' id="url">URL</input><br>
 <input type='text' id="playlist">Playlist</input><br>
 <button onClick="adicionarVideo(document.getElementById('url').value,document.getElementById('playlist').value)" class="btn btn-primary">Adicionar Video</button>
 <button onClick="criarPlaylist(document.getElementById('playlist').value)" class="btn btn-primary">Criar Playlist</button>
 <button onClick="deletarPlaylist()" class="btn btn-primary">Deletar Playlist</button>
+<button onClick="MostrarDemo()" class="btn btn-primary">Demostração (Gif)</button>
+<hr>
 </center>
 </body>
 <script src="playlist.js"></script>
