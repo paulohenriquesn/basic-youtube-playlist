@@ -33,8 +33,8 @@ adicionarVideo = (link,playlist,type) => {
 	
 	try{
 	playlists[save].links.push(id);
-	$("#urlplaylist").text(window.location.href + "?" + JSON.stringify(playlists));
-	$("#urlplaylist").attr('href',window.location.href + "?" + JSON.stringify(playlists));
+	$("#urlplaylist").text(decodeURI(window.location.href + "?" + JSON.stringify(playlists)));
+	$("#urlplaylist").attr('href',decodeURI(window.location.href + "?" + JSON.stringify(playlists)));
 	}catch{}
 
 	$(document).ready(function(){
@@ -59,8 +59,8 @@ adicionarVideo = (link,playlist,type) => {
 	
 	try{
 		playlists[save].links.push(id);
-		$("#urlplaylist").text(window.location.href + "?" + JSON.stringify(playlists));
-		$("#urlplaylist").attr('href',window.location.href + "?" + JSON.stringify(playlists));
+		$("#urlplaylist").text(decodeURI(window.location.href + "?" + JSON.stringify(playlists)));
+		$("#urlplaylist").attr('href',decodeURI(window.location.href + "?" + JSON.stringify(playlists)));
 		}catch{}
 
 	$(document).ready(function(){
@@ -77,8 +77,8 @@ adicionarVideo = (link,playlist,type) => {
 
 }
 try{
-$("#urlplaylist").text(window.location.href + "?" + JSON.stringify(playlists));
-$("#urlplaylist").attr('href',window.location.href + "?" + JSON.stringify(playlists));
+	$("#urlplaylist").text(decodeURI(window.location.href + "?" + JSON.stringify(playlists)));
+	$("#urlplaylist").attr('href',decodeURI(window.location.href + "?" + JSON.stringify(playlists)));
 }catch{}
 }
 
