@@ -27,11 +27,13 @@
 	<h1>Youtube Playlist Basic</h1><hr>
 <input type='text' id="url">URL</input><br>
 <input type='text' id="playlist">Playlist</input><br>
+<hr>
 <button onClick="adicionarVideo(document.getElementById('url').value,document.getElementById('playlist').value)" class="btn btn-primary">Adicionar Video</button>
-<button onClick="criarPlaylist(document.getElementById('playlist').value)" class="btn btn-primary">Criar Playlist</button>
+<button onClick="criarPlaylist(document.getElementById('playlist').value,5)" class="btn btn-primary">Criar Playlist</button>
 <button onClick="deletarPlaylist()" class="btn btn-primary">Deletar Playlist</button>
 <button onClick="MostrarDemo()" class="btn btn-primary">Demonstração (Gif)</button>
 <hr>
+<a href="" id="urlplaylist"></a>
 </center>
 </body>
 <script src="playlist.js"></script>
