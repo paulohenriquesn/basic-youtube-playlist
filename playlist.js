@@ -74,7 +74,7 @@ for(a=0;a<x.length;a++){
 	if(x[a].title != ""){
 		criarPlaylist(x[a].title);
 	for(i=0; i< x[a].links.length;i++){
-		adicionarVideo(x[a].links[i],x[a].title);
+		adicionarVideo("https://www.youtube.com/watch?v=" + x[a].links[i],x[a].title);
 	}
 	}
 }
