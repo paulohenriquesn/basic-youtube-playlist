@@ -13,11 +13,16 @@ adicionarVideo = (link,playlist) => {
 	deletar.setAttribute('class','btn btn-danger');
 	deletar.setAttribute('id','video' + id + 'btn');
 	document.getElementById('div' + playlist).appendChild(deletar);
+	
+	$(document).ready(function(){
+		$(document).ready(function(){
+			$("button").click(function(event){
+					$('#' + event.target.id).remove();
+					$('#' + event.target.id.substr(0,16)).remove();
+			});
+		});
+});
 
-	deletar.onclick = () => {
-		document.getElementById('video' + id).remove();
-		document.getElementById('video' + id + 'btn').remove();
-	}
 	
 	}else if(link.substr(0,5) == "https") {
 	id = link.substr(32,link.length);
@@ -27,12 +32,15 @@ adicionarVideo = (link,playlist) => {
 	deletar.setAttribute('class','btn btn-danger');
 	deletar.setAttribute('id','video' + id + 'btn');
 	document.getElementById('div' + playlist).appendChild(deletar);
-
-	deletar.onclick = () => {
-		document.getElementById('video' + id).remove();
-		document.getElementById('video' + id + 'btn').remove();
-	}
-
+	
+	$(document).ready(function(){
+		$(document).ready(function(){
+			$("button").click(function(event){
+					$('#' + event.target.id).remove();
+					$('#' + event.target.id.substr(0,16)).remove();
+			});
+		});
+});
 
 }
 }
