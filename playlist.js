@@ -1,5 +1,8 @@
 console.log(decodeURI(window.location.search.substr(1)));	
+try { 
 var x = JSON.parse(decodeURI(window.location.search.substr(1)));
+}
+catch {}
 
 adicionarVideo = (link,playlist) => {
 	if(link === "" || playlist ===""){alert('Porfavor prencha todos campos!');}else{
@@ -66,10 +69,14 @@ deletarPlaylist = () => {
 		document.getElementById("div" + nome).remove();
 	}
 }
-
-if (x.title != ""){
-	criarPlaylist(x.title);
-	for(i=0; i< x.links.length;i++){
-		adicionarVideo(x.links[i],x.title);
+try {
+for(a=0;a<x.length;a++){
+	if(x[a].title != ""){
+		criarPlaylist(x[a].title);
+	for(i=0; i< x[a].links.length;i++){
+		adicionarVideo(x[a].links[i],x[a].title);
+	}
 	}
 }
+
+} catch {}
